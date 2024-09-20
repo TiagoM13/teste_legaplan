@@ -1,0 +1,42 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px dashed #D7DDE9;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: #F7F9FD;
+    border: 1px solid #F7F9FD;
+    cursor: pointer;
+  }
+
+  span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #000;
+  }
+
+  button {
+    border: 0;
+    padding: 0.25rem;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.5s ease-in;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
