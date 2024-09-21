@@ -1,0 +1,53 @@
+.content {
+  margin-bottom: 1.25rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.541);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .cancelButton {
+    background-color: #E7EEFB;
+    border: none;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+
+  .deleteButton {
+    background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
+    color: white;
+    border: none;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+}

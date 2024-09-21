@@ -22,7 +22,7 @@
     color: #000;
   }
 
-  button {
+  >button {
     border: 0;
     padding: 0.25rem;
     background: transparent;
@@ -39,4 +39,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.completedText {
+  text-decoration: line-through;
 }
