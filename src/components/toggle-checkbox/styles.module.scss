@@ -1,0 +1,25 @@
+.check {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #B0BBD1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.completed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #A0DCF6;
+  border-radius: 4px;
+  border: 1px solid #0796D3;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

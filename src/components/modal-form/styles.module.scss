@@ -1,0 +1,59 @@
+.formGroup {
+  margin-bottom: 1.25rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #D7DDE9;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.561);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .cancelButton {
+    background-color: #E7EEFB;
+    border: none;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+
+  .addButton {
+    background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+    color: white;
+    border: none;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+}

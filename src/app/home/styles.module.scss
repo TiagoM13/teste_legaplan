@@ -2,3 +2,26 @@
   padding-left: 3rem;
   padding-right: 3rem;
 }
+
+.content {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto 20px;
+}
+
+.button {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  border: 0;
+  padding: 16px 24px 16px 24px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    filter: brightness(0.95);
+    cursor: pointer;
+  }
+}

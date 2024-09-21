@@ -1,13 +1,20 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import logo from "@app/assets/logo.png"
+import { formatDateInPortuguese } from '@app/utils/date';
 
 import styles from "./styles.module.scss"
 
-export default function Header() {
+interface HeaderProps {
+  username: string;
+}
+
+export const Header = ({ username }: HeaderProps) => {
+  const date = useMemo(() => formatDateInPortuguese(), []);
+
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <Image
         src={logo}
         width={150}
@@ -15,9 +22,8 @@ export default function Header() {
         alt="Logo"
       />
 
-      <h1>Bem-vindo de volta, Marcus</h1>
-
-      <span>Segunda, 01 de dezembro de 2025</span>
-    </div>
+      <h1>Bem-vindo de volta, {username}</h1>
+      <span>{date}</span>
+    </header>
   );
 }
