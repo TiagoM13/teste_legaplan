@@ -10,7 +10,7 @@ interface ModalConfirmDeletionProps {
 
 export const ModalConfirmDeletion = ({ isOpen, onClose, onDeleteTask }: ModalConfirmDeletionProps) => {
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <h2>Deletar tarefa</h2>
       <div className={styles.content}>
         <span>Tem certeza que você deseja deletar essa tarefa?</span>
