@@ -11,22 +11,22 @@ interface ModalFormProps {
 }
 
 export const ModalForm = ({ isOpen, onClose, onAddTask }: ModalFormProps) => {
-  const [title, setTitle] = useState('');
+  const [taskTitle, setTaskTitle] = useState('');
 
   const handleAddTask = () => {
-    if (title.trim()) {
-      onAddTask(title);
+    if (taskTitle.trim()) {
+      onAddTask(taskTitle);
       resetForm()
     }
   };
 
   const resetForm = () => {
-    setTitle('');
+    setTaskTitle("")
     onClose();
   }
 
   return (
-    <Modal isOpen={isOpen}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <h2>Nova tarefa</h2>
       <div className={styles.formGroup}>
         <label htmlFor="taskTitle">Título</label>
@@ -34,8 +34,8 @@ export const ModalForm = ({ isOpen, onClose, onAddTask }: ModalFormProps) => {
           id="taskTitle"
           type="text"
           placeholder="Digite"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={taskTitle}
+          onChange={(e) => setTaskTitle(e.target.value)}
         />
       </div>
       <div className={styles.actions}>

@@ -1,29 +1,38 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect } from "react";
 
 import styles from "./styles.module.scss"
 
 interface ModalProps {
+  children: ReactNode,
   isOpen: boolean;
-  children: ReactNode
+  onClose: () => void;
 }
 
-export const Modal = ({ isOpen, children }: ModalProps) => {
-  const [showModal, setShowModal] = useState(isOpen);
+export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
 
   useEffect(() => {
-    if (isOpen) {
-      setShowModal(true);
-    } else {
-      const timeout = setTimeout(() => setShowModal(false), 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [isOpen]);
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
 
-  if (!showModal) return null;
+    if (isOpen) {
+      window.addEventListener('keydown', handleEscKey);
+    } else {
+      window.removeEventListener('keydown', handleEscKey);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEscKey);
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
         {children}
       </div>
     </div>
