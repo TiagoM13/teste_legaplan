@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## TaskFlow Application
 
-## Getting Started
+Este é um projeto que desenvolvi como parte de um teste técnico, com o objetivo de criar um aplicativo simples de gerenciamento de tarefas. Ele permite adicionar, alternar o status (pendente/completado) e deletar tarefas, utilizando Next.js como framework e Zustand para o gerenciamento de estado. As tarefas são persistidas no localStorage para que o usuário não perca suas informações ao recarregar a página.
 
-First, run the development server:
+### Funcionalidades
+- **Adicionar tarefas**: O usuário pode criar novas tarefas.
+- **Alternar status**: É possível marcar as tarefas como "pendente" ou "completada".
+- **Deletar tarefas**: As tarefas podem ser removidas da lista.
+- **Persistência de dados**: As tarefas são salvas no localStorage e permanecem lá entre sessões.
+- **Modal de confirmação**: Um modal é exibido para confirmar a exclusão de uma tarefa.
+- **Responsividade**: O layout é totalmente responsivo e se adapta a dispositivos móveis e desktop.
+
+### Organização do Projeto
+Organizei o projeto da seguinte forma:
+
+#### Estrutura de Componentes
+
+- `Header`: Exibe o cabeçalho com o nome do usuário.
+- `TasksList`: Exibe a lista de tarefas, separada em tarefas pendentes e completadas. Usei o `useMemo` para otimizar a renderização, aplicando filtros de maneira eficiente.
+- `Task`: Componente individual para cada tarefa, permitindo alternar o status e deletar.
+- `ModalForm`: Modal para adicionar novas tarefas.
+- `ModalConfirmDeletion`: Modal para confirmar a exclusão de uma tarefa.
+
+#### Gerenciamento de Estado
+Optei por usar **Zustand** para o gerenciamento de estado. Aqui estão os principais pontos:
+
+- **Tasks State**:
+
+  - Armazena e manipula a lista de tarefas.
+  - Utilizei o `persist` do Zustand para garantir que as tarefas sejam salvas no `localStorage`.
+  
+- **Modal State**:
+
+  - Gerencio os estados dos modais de forma independente para controlar a exibição de modais de adição e confirmação de exclusão.
+
+### Ferramentas Utilizadas
+
+- **Next.js**: Para a criação do projeto.
+- **Zustand**: Para gerenciar o estado de forma eficiente.
+- **LocalStorage**: Para garantir a persistência das tarefas.
+- **SCSS**: Utilizei SCSS para gerenciar os estilos, o que permitiu uma maior modularidade e responsividade.
+
+### Responsividade
+Ajustei o layout utilizando SCSS para garantir uma boa experiência tanto em dispositivos móveis quanto em desktop.
+
+### Como Rodar o Projeto
+1. Clone o repositório:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/TiagoM13/taskflow.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Rode o projeto:
 
-## Learn More
+```bash
+  npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Acesse o projeto no navegador:
+  
+```bash
+  http://localhost:3000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
