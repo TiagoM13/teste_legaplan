@@ -58,4 +58,8 @@
       filter: brightness(0.95);
     }
   }
+
+  @media (max-width: 480px) {
+    flex-direction: column-reverse;
+  }
 }
