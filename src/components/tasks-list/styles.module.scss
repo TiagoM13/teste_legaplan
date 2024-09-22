@@ -9,12 +9,20 @@
   gap: 24px;
 
   border: 1px solid #EAECF0;
-  box-shadow: 0px 1px 2px 0px #1018280D;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.051);
 
   h3 {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.25;
     color: rgba(0, 0, 0, 0.541);
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 0.75rem;
+    }
   }
 }

@@ -1,6 +1,13 @@
+@import "../../styles/variables.scss";
+
 .container {
   padding-left: 3rem;
   padding-right: 3rem;
+
+  @media (max-width: 480px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 .content {
@@ -17,7 +24,7 @@
   border: 0;
   padding: 16px 24px 16px 24px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #0796D3 0%, #53C0F0 68.65%);
+  background: linear-gradient(90deg, $blue-600 0%, $blue-300 68.65%);
   transition: all 0.5s ease-in-out;
 
   &:hover {

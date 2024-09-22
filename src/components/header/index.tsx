@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useMemo } from 'react';
 
 import logo from "@app/assets/logo.png"
-import { formatDateInPortuguese } from '@app/utils/date';
+import { getFullDate } from '@app/utils/date';
 
 import styles from "./styles.module.scss"
 
@@ -11,16 +11,16 @@ interface HeaderProps {
 }
 
 export const Header = ({ username }: HeaderProps) => {
-  const date = useMemo(() => formatDateInPortuguese(), []);
+  const date = useMemo(() => getFullDate(), []);
 
   return (
     <header className={styles.container}>
-      <Image
-        src={logo}
-        width={150}
-        height={36}
-        alt="Logo"
-      />
+      <div>
+        <Image
+          src={logo}
+          alt="Logo"
+        />
+      </div>
 
       <h1>Bem-vindo de volta, {username}</h1>
       <span>{date}</span>
