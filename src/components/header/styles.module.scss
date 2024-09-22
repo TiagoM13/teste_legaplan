@@ -21,4 +21,20 @@
     line-height: 1.25;
     color: rgba(0, 0, 0, 0.541);
   }
+
+  @media (max-width: 1080px) {
+    h1 {
+      font-size: 1.25rem;
+    }
+
+    span {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 840px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
 }

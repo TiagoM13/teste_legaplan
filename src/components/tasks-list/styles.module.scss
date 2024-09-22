@@ -17,4 +17,12 @@
     line-height: 1.25;
     color: rgba(0, 0, 0, 0.541);
   }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+
+    h3 {
+      font-size: 0.75rem;
+    }
+  }
 }

@@ -15,12 +15,12 @@ export const Header = ({ username }: HeaderProps) => {
 
   return (
     <header className={styles.container}>
-      <Image
-        src={logo}
-        width={150}
-        height={36}
-        alt="Logo"
-      />
+      <div>
+        <Image
+          src={logo}
+          alt="Logo"
+        />
+      </div>
 
       <h1>Bem-vindo de volta, {username}</h1>
       <span>{date}</span>

@@ -31,4 +31,8 @@
     font-weight: 500;
     line-height: 1.875;
   }
+
+  @media (max-width: 480px) {
+    height: 100%;
+  }
 }
