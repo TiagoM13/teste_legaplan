@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .content {
   margin-bottom: 1.25rem;
 
@@ -33,7 +35,7 @@
   }
 
   .cancelButton {
-    background-color: #E7EEFB;
+    background-color: $gray-400;
     border: none;
 
     &:hover {
@@ -42,8 +44,8 @@
   }
 
   .deleteButton {
-    background: linear-gradient(90deg, #D30707 0%, #F05353 68.65%);
-    color: white;
+    background: linear-gradient(90deg, $red-600 0%, $red-300 68.65%);
+    color: #fff;
     border: none;
 
     &:hover {

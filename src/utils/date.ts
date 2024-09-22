@@ -1,4 +1,4 @@
-export const formatDateInPortuguese = () => {
+export const getFullDate = () => {
   const daysOfWeek = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
   const monthsOfYear = [
     'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
